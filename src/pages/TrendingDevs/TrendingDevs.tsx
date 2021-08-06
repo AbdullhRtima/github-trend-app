@@ -7,7 +7,7 @@
  * Copyright (c) - https://www.coinmena.com/
  *********************************************************************************************************************/
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useQuery } from 'react-query'
 import githubTrends from 'github-trends-api';
 
@@ -19,6 +19,17 @@ const TrendingDevs = () => {
             })
     );
     console.log("🚀 ~ file: TrendingDevs.tsx ~ line 16 ~ TrendingDevs ~ data", data)
+
+    // !FOR TEST PURPOSES 
+    // useEffect(() => {
+    //     fetch('https://gh-trending-api.herokuapp.com/developers')
+    //         .then(response => console.log("🚀 ~ file: TrendingDevs.tsx ~ line 26 ~ useEffect ~ response", response))
+    //         .then(data => console.log(data));
+    //     githubTrends({ section: 'developers', since: 'weekly' })
+    //         .then((res: any) => {
+    //             console.log("🚀 ~ file: TrendingDevs.tsx ~ line 18 ~ TrendingDevs ~ res", res)
+    //         })
+    // }, []);
 
     return (
         <div>
