@@ -1264,5 +1264,6 @@ const developer = [
 ]
 
 export {
-
+ repository,
+ developer
 }

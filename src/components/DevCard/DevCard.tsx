@@ -10,6 +10,7 @@
 import React from 'react';
 import { Avatar, Typography, Button } from 'antd';
 import { UserOutlined, FireOutlined, BookOutlined, HeartOutlined } from '@ant-design/icons';
+import { Developers } from '../../lib/api';
 
 // import style 
 import './DevCard.scss';
@@ -17,20 +18,26 @@ import './DevCard.scss';
 // constant
 const { Text } = Typography;
 
-const DevCard = (props: any) => {
+export interface DevCardPropsTypes {
+    dev: Developers;
+    index: number;
+};
+
+const DevCard = (props: DevCardPropsTypes) => {
+
     return (
         <div className="dev-card">
 
             <div className="dev-card__avatar">
                 <div>
-                    1
+                    {props.index + 1}
                 </div>
                 &nbsp;
-                <Avatar size={"large"} icon={<UserOutlined />} />
+                <Avatar src={props.dev?.avatar} size={"large"} icon={<UserOutlined />} />
                 &nbsp;
                 <div className="dev-card__name-wapper">
-                    <Text className="dev-card__name">Niklas von Hertzen </Text>
-                    <Text className="dev-card__name-des">Niklas von Hertzen </Text>
+                    <Text className="dev-card__name">{props.dev.name}</Text>
+                    <Text className="dev-card__name-des">{props.dev.username} </Text>
                 </div>
             </div>
             <div className="dev-card__details">

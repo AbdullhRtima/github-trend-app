@@ -13,6 +13,8 @@ import githubTrends from 'github-trends-api';
 import Layout from '../../components/Layout';
 import Box from '../../components/Box';
 import DevCard from '../../components/DevCard/DevCard';
+import { developer } from '../../lib/dummy';
+import { Developers } from '../../lib/api';
 
 const TrendingDevs = () => {
     const { isLoading, error, data } = useQuery('repoData', () =>
@@ -37,10 +39,11 @@ const TrendingDevs = () => {
     return (
         <Layout>
             <Box>
-                <DevCard/>
-                <DevCard/>
-                <DevCard/>
-                <DevCard/>
+                {developer.map((dev: any, index: number) => {
+                    return (
+                        <DevCard dev={dev} index={index} />
+                    )
+                })}
             </Box>
         </Layout>
     )
