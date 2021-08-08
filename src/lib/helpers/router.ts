@@ -19,3 +19,8 @@ export const ROUTE_PATH: RoutePath = {
     TREND_REPO: "/",
     TREND_DEV: "/developer",
 }
+
+// render Box header type 
+export const checkIsDev = (pathName: string) => {
+    return pathName.includes(ROUTE_PATH.TREND_DEV)
+};

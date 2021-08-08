@@ -36,6 +36,7 @@ function App() {
               exact={true}
               render={() => <TrendingRepo />}
             />
+            <Route render={()=> <h1>not found page 404</h1>} />
           </Switch>
         </ErrorBoundary>
       </ConfigProvider>

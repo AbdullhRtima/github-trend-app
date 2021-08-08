@@ -10,6 +10,9 @@
 import React, { useEffect } from 'react';
 import { useQuery } from 'react-query'
 import githubTrends from 'github-trends-api';
+import Layout from '../../components/Layout';
+import Box from '../../components/Box';
+import DevCard from '../../components/DevCard/DevCard';
 
 const TrendingDevs = () => {
     const { isLoading, error, data } = useQuery('repoData', () =>
@@ -32,9 +35,14 @@ const TrendingDevs = () => {
     // }, []);
 
     return (
-        <div>
-            Hello Dev
-        </div>
+        <Layout>
+            <Box>
+                <DevCard/>
+                <DevCard/>
+                <DevCard/>
+                <DevCard/>
+            </Box>
+        </Layout>
     )
 }
 

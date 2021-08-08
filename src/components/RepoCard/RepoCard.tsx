@@ -1,23 +1,20 @@
 /*********************************************************************************************************************
- * File: TrendingRepo.tsx
+ * File: RepoCard.tsx
  * Developed By Abdullah abu rtima 
  * Email: abdullahaburtima@gmail.com
- * Date: 2021-08-05
- * Desc: this file contains the trending repository page 
+ * Date: 2021-08-08
+ * Desc: this file contains the Repo Card component 
  * Copyright (c) - https://www.coinmena.com/
  *********************************************************************************************************************/
 
 import React from 'react';
-import Box from '../../components/Box';
-import Layout from '../../components/Layout';
 
-const TrendingRepo = () => {
+const RepoCard = () => {
     return (
-        <Layout>
-            <Box>
-            </Box>
-        </Layout>
+        <div>
+
+        </div>
     )
 }
 
-export default TrendingRepo;
+export default RepoCard;

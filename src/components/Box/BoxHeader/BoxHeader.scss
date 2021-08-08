@@ -1,0 +1,17 @@
+.box-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-gray-5) !important;
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-gray-2);
+  .ant-radio-button-wrapper:last-child {
+    border-radius: 0 8px 8px 0;
+  }
+  .ant-radio-button-wrapper:first-child {
+    border-radius: 8px 0 0 8px;
+  }
+  &__downdrop {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
