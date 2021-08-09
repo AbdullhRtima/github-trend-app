@@ -10,11 +10,18 @@
 import React from 'react';
 import Box from '../../components/Box';
 import Layout from '../../components/Layout';
+import RepoCard, { RepoCardPropsType } from '../../components/RepoCard/RepoCard';
+import { repository } from '../../lib/dummy';
 
 const TrendingRepo = () => {
     return (
         <Layout>
             <Box>
+                {repository.map((repo: any) => {
+                    return (
+                        <RepoCard repo={repo} />
+                    )
+                })}
             </Box>
         </Layout>
     )

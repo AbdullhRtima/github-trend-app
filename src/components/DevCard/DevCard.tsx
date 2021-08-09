@@ -7,7 +7,7 @@
  * Copyright (c) - https://www.coinmena.com/
  *********************************************************************************************************************/
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Avatar, Typography, Button } from 'antd';
 import { UserOutlined, FireOutlined, BookOutlined, HeartOutlined } from '@ant-design/icons';
 import { Developers } from '../../lib/api';
@@ -25,9 +25,13 @@ export interface DevCardPropsTypes {
 
 const DevCard = (props: DevCardPropsTypes) => {
 
+    // handle go to repo by URL 
+    const handleOpenLink = useCallback((url: string) => {
+        window.open(url, "__blank")
+    }, [props]);
+
     return (
         <div className="dev-card">
-
             <div className="dev-card__avatar">
                 <div>
                     {props.index + 1}
@@ -36,7 +40,12 @@ const DevCard = (props: DevCardPropsTypes) => {
                 <Avatar src={props.dev?.avatar} size={"large"} icon={<UserOutlined />} />
                 &nbsp;
                 <div className="dev-card__name-wapper">
-                    <Text className="dev-card__name">{props.dev.name}</Text>
+                    <Text
+                        onClick={() => handleOpenLink(props.dev.url)}
+                        className="dev-card__name"
+                    >
+                        {props.dev.name}
+                    </Text>
                     <Text className="dev-card__name-des">{props.dev.username} </Text>
                 </div>
             </div>
@@ -48,22 +57,35 @@ const DevCard = (props: DevCardPropsTypes) => {
                         POPULAR REPO
                     </Text>
                 </div>
-                <div className="dev-card__repo">
+                {props.dev.popularRepository?.repositoryName && <div className="dev-card__repo">
                     <BookOutlined />
                     &nbsp;
-                    <Text className="dev-card__repo-text">
-                        quic-interop-runner
+                    <Text
+                        onClick={() => handleOpenLink(props.dev.popularRepository.url)}
+                        className="dev-card__repo-text"
+                    >
+                        {props.dev.popularRepository.repositoryName } afklsdfl ajdvksjv sdvksd
                     </Text>
-                </div>
-                <div >
+                </div>}
+                {props.dev.popularRepository.description && <div >
                     <Text className="dev-card__repo-des">
-                        quic-interop-runner
+                        {props.dev.popularRepository.description}
                     </Text>
-                </div>
+                </div>}
             </div>
             <div >
-                <Button className="dev-card__btn" icon={<HeartOutlined />}>Sponsor</Button>
-                <Button className="dev-card__btn">Follow</Button>
+                <Button
+                    onClick={() => handleOpenLink(props.dev.url)}
+                    className="dev-card__btn" icon={<HeartOutlined />}
+                >
+                    Sponsor
+                </Button>
+                <Button
+                    onClick={() => handleOpenLink(props.dev.url)}
+                    className="dev-card__btn"
+                >
+                    Follow
+                </Button>
             </div>
         </div>
     )

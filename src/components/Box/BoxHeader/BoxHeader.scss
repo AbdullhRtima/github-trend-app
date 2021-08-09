@@ -10,8 +10,11 @@
   .ant-radio-button-wrapper:first-child {
     border-radius: 8px 0 0 8px;
   }
+  .ant-dropdown-trigger{
+    color: var(--color-black);
+  }
   &__downdrop {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

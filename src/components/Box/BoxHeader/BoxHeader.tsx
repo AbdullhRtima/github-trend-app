@@ -83,13 +83,18 @@ const BoxHeader = (props: BoxHeaderPropsType) => {
                 </Radio.Group>
             </div>
             <div className="box-header__controls">
+                {!checkIsDev(pathname) && <Dropdown overlay={renderDateRangeMenu} trigger={['click']}>
+                    <a onClick={e => e.preventDefault()}>
+                        Spoken Language : <span>Any </span><DownOutlined />
+                    </a>
+                </Dropdown>}
                 <Dropdown className="box-header__downdrop" overlay={renderDateRangeMenu} trigger={['click']}>
-                    <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                    <a onClick={e => e.preventDefault()}>
                         Language : <span>Any </span><DownOutlined />
                     </a>
                 </Dropdown>
                 <Dropdown overlay={renderDateRangeMenu} trigger={['click']}>
-                    <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                    <a onClick={e => e.preventDefault()}>
                         Date Range : <span>Today </span><DownOutlined />
                     </a>
                 </Dropdown>
