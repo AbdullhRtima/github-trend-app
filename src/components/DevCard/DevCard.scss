@@ -1,0 +1,81 @@
+.dev-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 0.1rem solid var(--color-gray-2);
+  &__avatar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__name-wapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 13rem;
+  }
+  &__name {
+    color: var(--color-blue-1);
+    font-weight: 500;
+    font-size: 1.5rem;
+    width: 12rem;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__name-des {
+    color: var(--color-gray-6);
+    font-size: 1.2rem;
+  }
+  &__btn {
+    margin: 0.5rem;
+    border-radius: 0.6rem;
+    svg {
+      color: var(--color-red-1);
+      font-size: 1rem;
+    }
+  }
+  &__details {
+    width: 15rem;
+  }
+  &__pop {
+    svg {
+      color: var(--color-orange-1);
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
+  &__repo {
+    color: var(--color-blue-1);
+    font-weight: 500;
+    font-size: 1.4rem;
+    width: 16rem;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    svg {
+      color: var(--color-blue-1);
+      font-weight: 500;
+      font-size: 1.4rem;
+    }
+  }
+  &__repo-text {
+    color: var(--color-blue-1);
+    font-weight: 600;
+    font-size: 1.2rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__repo-des {
+    color: var(--color-gray-1);
+    font-weight: 400;
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+}
